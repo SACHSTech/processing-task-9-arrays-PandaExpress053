@@ -3,7 +3,14 @@ import java.util.Arrays;
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
+	/**
+   * 
+   * Description: This class creates a sketch that displays snowflakes falling from the top of the screen.
+   * The player can move left and right to avoid the snowflakes. Each snowball takes one life away from the characters initial 3 lives
+   * The player can also change the speed of the snowflakes by pressing
+   * the up and down arrow keys. The player can hide snowflakes by clicking on them with the mouse.
+   * @author: E.Fung
+   */
 	// Initializing variables
   int intObjectNum = 40;
   float[] fltCircleY = new float[intObjectNum];
@@ -161,6 +168,7 @@ public class Sketch extends PApplet {
     }
   }
 
+  
   public void keyPressed(){
     // toggles respective variables to know when key is pressed
 
@@ -199,4 +207,5 @@ public class Sketch extends PApplet {
     // check if mouse has been pressed
     isPressed = true;
   }
+  
 }
