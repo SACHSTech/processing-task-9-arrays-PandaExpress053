@@ -60,7 +60,10 @@ public class Sketch extends PApplet {
   }
   
   public void draw() {
-    background(50);
+    if (isAlive){
+      background(50);
+    }
+    
 
     // Displaying snow
     for (int i = 0; i < fltCircleY.length; i++) {
@@ -141,7 +144,9 @@ public class Sketch extends PApplet {
 
   }
   
-  // define other methods down here.
+  /**
+   * handles key releases for moving player and changing snowfall speed
+   */
   public void keyReleased() {
     // toggles respective variables to know when key is released
 
@@ -168,7 +173,9 @@ public class Sketch extends PApplet {
     }
   }
 
-  
+  /**
+   * handles key presses for moving player and changing snowfall speed
+   */
   public void keyPressed(){
     // toggles respective variables to know when key is pressed
 
@@ -194,15 +201,24 @@ public class Sketch extends PApplet {
       isDPressed = true;
     }
   }
+  /**
+   * prevents mouse dragging to destroy snowballs
+   */
   public void mouseDragged(){
     // check if mouse is being dragged
     isDrag = true;
   }
+  /**
+   * allows the destruction of snowballs as mouse is not dragged or pressed
+   */
   public void mouseReleased(){
     // mouse is not being dragged or pressed
     isDrag = false;
     isPressed = false;
   }
+  /**
+   * checks if mouse is being pressed
+   */
   public void mousePressed(){
     // check if mouse has been pressed
     isPressed = true;
